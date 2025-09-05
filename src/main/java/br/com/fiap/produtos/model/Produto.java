@@ -15,7 +15,7 @@ public class Produto {
     @SequenceGenerator(
             name = "SEQ_PRODUTOS",
             sequenceName = "SEQ_PRODUTOS",
-            allocationSize = 50
+            allocationSize = 1
     )
     private Long id;
 
