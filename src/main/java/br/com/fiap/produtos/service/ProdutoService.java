@@ -32,10 +32,10 @@ public class ProdutoService {
         return produtoRepository.findAll();
     }
 
-    public Produto atualizar(Produto produto){
-        Optional<Produto> produtoAtualizado = produtoRepository.findById(produto.getId());
-        if(produtoAtualizado.isPresent()){
-            return produtoRepository.save(produtoAtualizado.get());
+    public Produto atualizar(Long id, Produto produto){
+        Optional<Produto> produtoAtual = produtoRepository.findById(id);
+        if(produtoAtual.isPresent()){
+            return produtoRepository.save(produto);
         } else {
             throw new RuntimeException("Produto não encontrado!");
         }

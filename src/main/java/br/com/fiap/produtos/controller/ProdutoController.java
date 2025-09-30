@@ -39,10 +39,10 @@ public class ProdutoController {
         produtoService.excluir(id);
     }
 
-    @PutMapping("/produtos")
+    @PutMapping("/produtos/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Produto atualizar(@RequestBody Produto produto){
-        return produtoService.atualizar(produto);
+    public Produto atualizar(@PathVariable Long id, @RequestBody Produto produto){
+        return produtoService.atualizar(id, produto);
     }
 
 }
